@@ -22,7 +22,7 @@
   <ion-grid>
     <ion-row>
       <ion-col
-        size="6" horizontal="center"
+        size="6" 
         *ngFor="let photo of photoService.photos; index as position"
       >
         <ion-img [src]="photo.webviewPath"></ion-img>
@@ -30,7 +30,7 @@
     </ion-row>
   </ion-grid>
   
-    <ion-fab  horizontal="center" slot="fixed">
+    <ion-fab  horizontal="center"  slot="fixed">
       <ion-fab-button (click)="addPhotoToGallery()">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
@@ -40,18 +40,18 @@
       <ion-item>
         
         <ion-label position="floating">User Name</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input></ion-input>
+        <ion-label position="floating"> {{email}}</ion-label>
+        <ion-input type="email"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Mobile Nnumber</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
+      <ion-item >
+        <ion-label position="floating">Mobile Number</ion-label>
+        <ion-input type="text" ></ion-input>
+      </ion-item> 
       
   
     </form>
