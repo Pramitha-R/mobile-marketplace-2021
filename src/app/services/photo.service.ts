@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, CameraPhoto } from '@capacitor/camera';
-
 import {PermissionState} from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 //import { Storage } from '@capacitor/storage';
@@ -17,7 +16,7 @@ export class PhotoService {
   
 
   //private PHOTO_STORAGE: string = "photos";
-
+    /*
   private async savePicture(cameraPhoto: CameraPhoto) {
     // Convert photo to base64 format, required by Filesystem API to save
     const base64Data = await this.readAsBase64(cameraPhoto);
@@ -54,7 +53,7 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
   };
   reader.readAsDataURL(blob);
 });
-
+*/
   public async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
@@ -63,8 +62,8 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
       quality: 100 // highest quality (0 to 100)
     });
     // Save the picture and add it to photo collection
-    const savedImageFile = await this.savePicture(capturedPhoto);
-    this.photos.unshift(savedImageFile);
+    /*const savedImageFile = await this.savePicture(capturedPhoto);
+    this.photos.unshift(savedImageFile);*/
 
     this.photos.unshift({
       filepath: "soon...",
@@ -102,9 +101,11 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
   */
   constructor() { }
 }
+
 export interface Photo {
   filepath: string;
   webviewPath: string;
 }
+
 
 

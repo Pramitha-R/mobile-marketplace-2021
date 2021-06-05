@@ -7,21 +7,22 @@ ion-header,ion-toolbar,ion-title{
 
 ion-content{
   --background:#f5f5f3;
-  ion-grid,ion-row-ion-col,ion-img{
-      width:125px;
-      height: 125px;
-      border-radius: 50%;
-      border :5px solid #ffffff;
+  ion-grid,ion-row-ion-col{
+      width:200px;
+      height: 200px;
+     // border-radius: 50%;
+      border :5px solid #f5f5f3;
       
   }
 
   ion-fab{
-    padding-top: 80px;
+    padding-top: 150px;
 
   }
 
   #form{
-    margin-top:15px;
+    //padding-top: 16px;
+    margin-top:17px;
     padding-left:30px;
     padding-right:30px;
 
@@ -34,9 +35,13 @@ ion-content{
 
     }
   }
-
-
     
+}
+ion-grid,ion-row-ion-col,ion-img{
+  height: 200px;
+  width: 200px;
+  border: 5px solid #ffffff;
+ // border-radius: 50%;
 }
 
   
