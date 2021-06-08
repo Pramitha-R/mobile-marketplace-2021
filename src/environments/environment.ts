@@ -6,14 +6,15 @@ export const environment = {
   production: false,
   
   firebaseConfig:{
-    apiKey: "AIzaSyAnsSVLactwsAY3zLD9YYKvieT9TkgUdB8",
-    authDomain: "mobilemarketplace-266c5.firebaseapp.com",
-    projectId: "mobilemarketplace-266c5",
-    storageBucket: "mobilemarketplace-266c5.appspot.com",
-    messagingSenderId: "310374443092",
-    appId: "1:310374443092:web:4f391892f6557eed1c65c1"
+    apiKey: "AIzaSyBPvZaPxRyiDA_mEjdj3tcbbbgANdNuGAg",
+    authDomain: "mobile-marketplace-2021-69b61.firebaseapp.com",
+    projectId: "mobile-marketplace-2021-69b61",
+    storageBucket: "mobile-marketplace-2021-69b61.appspot.com",
+    messagingSenderId: "980256845953",
+    appId: "1:980256845953:web:d6a25320f1b057e4235d80",
+    measurementId: "G-GF50RYNXX1"
   }
-    }
+}
 
 
 /*

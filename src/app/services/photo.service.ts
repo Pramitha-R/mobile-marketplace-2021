@@ -10,7 +10,8 @@ import {ProfilePage} from '../profile/profile.page';    //just import
 })
 
 
-export class PhotoService {
+export class PhotoService {  
+  
 
   public photos: Photo[] = [];
   
