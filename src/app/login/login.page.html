@@ -1,36 +1,29 @@
-
-
 <ion-content>
-<div class="login-logo">
-  <img src="assets/icon/favicon.png" class="logo_icon">
-  <p class="login-name">Mobile Market Place</p>
-  <p class="subTitle">Enter your login detail to access your account</p>
-</div>
-<form #loginForm="ngForm">
-  <ion-list lines="none">
-    <ion-item lines="none">
-      <ion-input [(ngModel)]="email" placeholder="Email" name="email" required>
+  <div class="login-logo">
+    <img src="assets/icon/icon.png" class="logo-icon">
+    <p class="login-name">Mobile Market Place</p>
+    <p class="subTitle">Enter your login detail to access your account</p>
+  </div>
+  <form #loginForm="ngForm">
+    <ion-list lines="none">
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="email" placeholder="Email" name="email" required></ion-input>
+      </ion-item>
 
-      </ion-input>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-input [(ngModel)]="password" placeholder="Password" name="password"  type="password" required>
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="password" placeholder="Password" name="paaword" type="password" required></ion-input>
+      </ion-item>
+    </ion-list>
 
-      </ion-input>
-    </ion-item>
-  </ion-list>
+    <ion-row class="Ion-no-margin ion-no-padding">
+      <ion-col class="Ion-no-margin ion-no-padding">
+        <ion-button class="btn_class" (click)="onLogin(loginForm)" color="dark" type="submit" expand="block">Login</ion-button>
+        <label class="errorMessage">{{errorMessage}}</label>
+      </ion-col>
+    </ion-row>
+  </form>
 
-  <ion-row class="Ion-no-margin ion-no-padding">
-    <ion-col class="Ion-no-margin ion-no-padding">
-      <ion-button class="btn_class" (click)="onLogin(loginForm)" color="secondary" type="submit" expand="block">
-        Login 
-      </ion-button>
-      <label class="errorMessage">{{errorMessage}}</label>
-    </ion-col>
-  </ion-row>
-</form>
-<p class="createAcc" (click)="register()">Don't have an account?
-  <span class="registerTag">Sign up</span>
-</p>
-
+  <p class="createAcc" (click)="register()">Don't have an account?
+    <span class="registerTag">Sign up</span>
+  </p>
 </ion-content>

@@ -1,9 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>my-listings-add</ion-title>
-  </ion-toolbar>
+  <ion-navbar>
+    <ion-button ion-button icon-only (click)="back()" fill="clear" class="backBtn">
+      <ion-icon name="arrow-back-outline" ></ion-icon>
+    </ion-button>
+    <ion-title>
+      My Listing Add
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <div class="main_content">
+    <div class="img_get" [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}"></div>
+    <div class="file_select">
+      <ion-input class="hidden" slot="end" type="file" id="myfile" accept="image/png, image/jpeg" (change)="get_file($event)"></ion-input>
+      <ion-button class="upload_btn" slot="end" (click)="uploadingImage()">Upload</ion-button>
+    </div>
 
+    <div class="add_form">
+      <form [formGroup]="listing_form">    
+        <ion-input type="text"  formControlName="title" placeholder="Title"></ion-input>
+        <ion-textarea rows="5" formControlName="description"  placeholder="Description"></ion-textarea>
+        <ion-input type="text"  formControlName="price" placeholder="Price"></ion-input>
+        <ion-button (click)="onClickSave()"  expand="block">Save</ion-button>
+      </form>
+    </div>
+  </div>
 </ion-content>

@@ -1,56 +1,83 @@
-ion-toolbar {
-    --background:blue;
-  }
-ion-header,ion-toolbar,ion-title{
-  color :white;
+ion-title{
+  color: white;
+  margin: 0;
+  height: 50px;
 }
 
-ion-content{
-  --background:#f5f5f3;
-  ion-grid,ion-row-ion-col{
-      width:175px;
-      height: 175px;
-     // border-radius: 50%;
-      border :5px solid #f5f5f3;
-      
-  }
-
-  ion-fab{
-    padding-top: 120px;
-
-  }
-
-  #form{
-    //padding-top: 16px;
-    margin-top:14px;
-    padding-left:25px;
-    padding-right:25px;
-
-    ion-input{
-        --background: white;
-        margin-top:14px;
-        padding-left:30px;
-        padding-right:30px;
-        border-radius: 20%;
-
-    }
-    ion-button{
-      //margin-top: 35px;
-      height: 48px;
-      font-size: 18px;
-      text-transform: initial;
-      border-radius: 50px;
-      box-shadow: 1px 8px 8px 0px rgb(0, 0, 0.8);
-      --box-shadow:none
-  }
-  }
-    
+ion-header{
+  background-color: rgb(2, 20, 22);
 }
-ion-grid,ion-row-ion-col,ion-img{
-  height: 200px;
+
+.img_get{
   width: 200px;
-  border: 5px solid #ffffff;
- // border-radius: 50%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: 20px;
 }
 
-  
+.main_content{
+  ul{
+    list-style-type:disc;
+    line-height: 180%;
+  }
+  li{
+    //float: left;
+    display: flex;
+  }
+}
+
+.btn_class{
+  width: 100%;
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  .edit_btn{
+    margin-top: 10px;
+    width: 50%;
+    border-radius: 50%;
+    --background: var(--ion-color-dark);
+    padding-right: 10px;
+  }
+  .update_btn{
+    margin-top: 10px;
+    width: 50%;
+    border-radius: 50%;
+    --background: var(--ion-color-dark);
+    padding-left: 10px;
+  }
+}
+
+.edit_profile{
+  .backBtn{
+    color: black;
+  }
+  .edit_title{
+    padding-top: 0;
+    text-align: center;
+    font-size: 1.9rem;
+    color:darkslategrey;
+    font-weight: 600;
+    font-family: "Times New Roman", Times, serif;
+  }
+  .dp_img{
+    display: flex;
+    //
+    margin: 0;
+    //
+    .upload_btn{
+      /* margin-top: 10px;
+      width: 50%; */
+      border-radius: 50px;
+      --background: var(--ion-color-dark);
+    }
+  }
+  .update_btn{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+    --background: var(--ion-color-dark);
+  }
+}
+

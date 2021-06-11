@@ -13,8 +13,11 @@ p{
     color: black !important;
 }
 .header_lbl{
-    font-size: 1.5rem;
-    color: var(--ion-color-secondary) !important;
+    font-size: 2.5rem;
+    //color: var(--ion-color-secondary) !important;
+    color:darkslategrey;
+    font-weight: 600;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .resend_btn{
@@ -67,4 +70,4 @@ ion-item{
             top: 10px;
         }
     }
-}
+} 

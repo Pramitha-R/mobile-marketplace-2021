@@ -1,9 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>homebchds tab</ion-title>
-  </ion-toolbar>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="main_content">
+    <div class="show_cards" *ngFor="let item of data">
+      <div class="img_get" 
+        [ngStyle]="{'background-image': 'url(' + item.photoUrl + ')'}"></div>
+      <div class="item-details">
+        <ion-label class="item_title">Name: {{item.title}}</ion-label>
+        <ion-label class="item_description">{{item.description}}</ion-label>
+        <ion-label class="item_price">Price: {{item.price}}</ion-label>
+      </div>
+    </div>
+  </div>
 </ion-content>

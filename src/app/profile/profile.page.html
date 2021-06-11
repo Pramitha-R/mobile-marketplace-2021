@@ -1,48 +1,65 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Profile</ion-title>
-  </ion-toolbar>
+  <ion-navbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  
-    <ion-grid class="card">
-      <ion-row class="header">
-        <ion-col class="avatar" size="12" *ngFor="let photo of photoService.photos; index as position">
-          <ion-img [src]="photo.webviewPath"></ion-img>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+<ion-content>
+  <div *ngIf="default" class="userProfile">
+    <div *ngFor="let dp of data">
+      <center><div class="img_get" [ngStyle]="{'background-image': 'url(' + dp.photoUrl + ')'}"></div></center>
+    </div>
+      
+    <div class="main_content">
+      <ul>
+        <li>
+          <h2>Username : </h2>
+          <h2 *ngFor="let dp of data">{{dp.username}}</h2>
+        </li>
+        <li>
+          <h2>Email : </h2>
+          <h2 *ngFor="let dp of data">{{dp.email}}</h2>
+        </li>
+        <li>
+          <h2>Contact No : </h2>
+          <h2 *ngFor="let dp of data">{{dp.contactno}}</h2>
+        </li>
+      </ul>
+    </div>  
+    <div class="btn_class">  
+      <ion-button class="edit_btn" (click)="editprofile()" >Edit</ion-button>
+      <ion-button class="update_btn" (click)="Signout()">Sign out</ion-button>
+    </div> 
+  </div>
 
-      <ion-fab  horizontal="center"  slot="fixed">
-        <ion-fab-button (click)="addPhotoToGallery()">
-          <ion-icon name="camera"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
+  <div *ngIf="!default" class="edit_profile">
+    <ion-button ion-button icon-only (click)="back()" fill="clear" class="backBtn">
+      <ion-icon name="arrow-back-outline" ></ion-icon>
+    </ion-button>
+      <h2 class="edit_title">Edit Profile</h2>
+      <form [formGroup]="edit_form">
 
-      <form id=form>
-        <ion-item>
+        <ion-item class="dp_img" lines="full">
+          <ion-input class="file" type="file" accept="image/png, image/jpeg" (change)="uploadImage($event)"></ion-input>
+          <ion-button class="upload_btn" slot="end" (click)="updateProfileImg()">Upload</ion-button>
+        </ion-item>
+
+        <ion-item lines="full">
+            <ion-label position="fixed">Username </ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="fixed">Email </ion-label>
+          <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+            <ion-label position="fixed">Contact No </ion-label>
+            <ion-input type="text" formControlName="contactno"></ion-input>
+        </ion-item>
           
-        <ion-label position="floating">User Name</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-
-        <ion-item >
-          <ion-label position="floating">Mobile Number</ion-label>
-          <ion-input type="text"  ></ion-input>
-        </ion-item> 
-
-        <ion-button expand="block" shape="round">Update Profile</ion-button>
-        
-    
+        <ion-button class="update_btn" (click)="updateprofile()"  expand="block" shape="round">Update</ion-button>
       </form>
-
-    
-
-  <app-explore-container name="profile page"></app-explore-container>
+  </div>
 </ion-content>
